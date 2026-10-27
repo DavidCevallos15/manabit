@@ -6,18 +6,20 @@ import { PixelGrid } from "@/components/ui/PixelGrid";
 import { CTA_DIAGNOSTICO, site } from "@/lib/site";
 import { dur, ease } from "@/lib/motion";
 import { ChatDemo } from "./hero/ChatDemo";
-import { EmblemBuild } from "./hero/EmblemBuild";
+import { BrandVideo } from "@/components/brand/BrandVideo";
+import { usePageReady } from "@/components/brand/PageBoot";
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const ready = usePageReady();
   const line = (i: number) => ({
     initial: reduce ? false : { y: "105%" },
-    animate: { y: "0%" },
+    animate: { y: ready ? "0%" : "105%" },
     transition: { duration: dur.reveal, ease: ease.reveal, delay: 0.15 + i * 0.09 },
   });
   const fade = (d: number) => ({
     initial: reduce ? false : { opacity: 0, y: 16 },
-    animate: { opacity: 1, y: 0 },
+    animate: { opacity: ready ? 1 : 0, y: ready ? 0 : 16 },
     transition: { duration: dur.reveal, ease: ease.reveal, delay: d },
   });
 
@@ -30,7 +32,7 @@ export function Hero() {
         <motion.p {...fade(0.05)} className="eyebrow text-muted">
           {site.descriptor} · {site.zone}
         </motion.p>
-        <h1 className="mt-6 text-[clamp(2.75rem,6.1vw,6rem)] font-extrabold leading-[0.95] tracking-[-0.045em]">
+        <h1 className="mt-6 text-[clamp(2.25rem,4.55vw,4.65rem)] font-extrabold leading-[0.98] tracking-[-0.045em]">
           <span className="block overflow-hidden pb-[0.06em]">
             <motion.span className="block" {...line(0)}>
               Webs que trabajan
@@ -66,8 +68,8 @@ export function Hero() {
 
       <div className="relative mx-auto flex w-full max-w-[460px] flex-col items-start lg:items-end">
         <PixelGrid className="absolute -right-2 -top-10 text-fg" />
-        <EmblemBuild className="w-[44%] max-w-[200px] self-start" />
-        <motion.div {...fade(0.9)} className="-mt-6 w-full self-end sm:w-auto">
+        <BrandVideo kind="inicio" className="mb-5 w-full" />
+        <motion.div {...fade(0.9)} className="w-full self-end sm:w-auto">
           <ChatDemo />
         </motion.div>
       </div>

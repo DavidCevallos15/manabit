@@ -111,6 +111,7 @@
     font-family: var(--font-display);
     min-height: 100svh;
   }
+  [id] { scroll-margin-top: 100px; }
   ::selection {
     background: var(--accent);
     color: var(--bg);
@@ -123,6 +124,44 @@
     text-wrap: balance;
     font-variation-settings: "opsz" 96;
   }
+}
+
+/* El loader solo se activa desde el script inicial: sin JS la web se lee igual. */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--fg);
+  --manabit-bit: var(--accent);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 280ms ease, visibility 280ms;
+}
+.page-loader p { text-align: center; font-size: 16px; }
+.booting .page-loader { opacity: 1; visibility: visible; pointer-events: auto; }
+.booting body { overflow: hidden; }
+.boot-fallback main [style], .boot-fallback header[style] { opacity: 1 !important; transform: none !important; }
+.brand-film { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg); }
+.brand-film-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 32px; }
+.work-filters button { display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 48px; background: var(--surface); font-size: 16px; cursor: pointer; transition: background 160ms, color 160ms; }
+.work-filters button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.work-filters button:hover { background: var(--fg); color: var(--bg); }
+.work-filters button span { font-variant-numeric: tabular-nums; opacity: 0.7; }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 1100; padding: 14px 20px; background: var(--fg); color: var(--bg); transform: translateY(-150%); }
+.skip-link:focus { transform: none; }
+@media (max-width: 639px) {
+  .work-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .work-filters { width: 100%; }
+  .work-filters button { flex: 1; justify-content: center; padding: 12px 10px; font-size: 14px; }
 }
 
 /* Slider de la calculadora */

@@ -5,8 +5,8 @@ import { cn } from "@/lib/cn";
 
 function Cell({ title, body, className, delay, children }: { title: string; body: string; className?: string; delay: number; children?: ReactNode }) {
   return (
-    <Reveal delay={delay} className={cn("cut flex flex-col justify-between gap-8 border border-line bg-surface p-6 md:p-8", className)}>
-      <div aria-hidden>{children}</div>
+    <Reveal delay={delay} className={cn("cut flex min-w-0 flex-col justify-between gap-8 overflow-hidden border border-line bg-surface p-6 md:p-8", className)}>
+      <div className="min-w-0" aria-hidden>{children}</div>
       <div>
         <h3 className="text-2xl font-extrabold tracking-[-0.025em]">{title}</h3>
         <p className="mt-2 leading-relaxed text-muted">{body}</p>

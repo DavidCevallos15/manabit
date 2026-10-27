@@ -40,7 +40,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
             )}
           </div>
           <h3 id={`plan-${plan.stem}`} className="mt-5 leading-[0.9]">
-            <PlanName stem={plan.stem} className="text-[clamp(3.25rem,9vw,7.5rem)]" />
+            <PlanName stem={plan.stem} className="text-[clamp(2.65rem,7.5vw,6.5rem)]" />
           </h3>
           <p className="mt-5 max-w-md text-xl font-semibold md:text-2xl">{plan.tagline}</p>
         </div>

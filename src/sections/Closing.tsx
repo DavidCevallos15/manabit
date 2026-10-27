@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { ease } from "@/lib/motion";
 import { CTA_DIAGNOSTICO, site } from "@/lib/site";
+import { BrandVideo } from "@/components/brand/BrandVideo";
 
 const SOCIAL = [
   { key: "instagram", label: "Instagram" },
@@ -18,14 +19,15 @@ export function Closing() {
   const reduce = useReducedMotion();
   const year = 2026;
   return (
-    <footer className="relative overflow-hidden pt-[var(--spacing-section-y)]">
-      <div className="mx-auto max-w-7xl px-[var(--spacing-section-x)]">
+    <footer id="contacto" className="relative overflow-hidden pt-[var(--spacing-section-y)]">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-[var(--spacing-section-x)] lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
         <Reveal>
           <p className="eyebrow text-muted">Diagnóstico gratis</p>
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="mt-4 max-w-4xl text-5xl font-extrabold leading-[0.98] tracking-[-0.04em] md:text-7xl">
-            ¿Vemos cuántos mensajes se te escapan?
+            Hablemos de tu negocio.
           </h2>
         </Reveal>
         <Reveal delay={0.16} className="mt-10 flex flex-wrap items-center gap-5">
@@ -36,6 +38,9 @@ export function Closing() {
           </Magnetic>
           <p className="font-mono text-sm font-bold text-muted">15 minutos · sin costo · {site.zone}</p>
         </Reveal>
+        <a href={`mailto:${site.email}`} className="mt-6 inline-flex min-h-11 items-center text-base text-muted hover:text-fg">O escríbeme a {site.email}</a>
+        </div>
+        <BrandVideo kind="cierre" />
       </div>
 
       <div className="mt-20 px-[var(--spacing-section-x)]" aria-hidden>
@@ -67,9 +72,9 @@ export function Closing() {
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-line px-[var(--spacing-section-x)] py-8 text-sm text-muted md:flex-row md:items-center md:justify-between">
         <p>
           © {year} {site.name} · {site.descriptor} · Portoviejo, Manabí ·{" "}
-          <span className="font-mono font-bold text-fg">by David Cevallos</span>
+          <a href={site.portfolio} target="_blank" rel="noopener noreferrer" className="font-bold text-fg hover:text-accent">by David Cevallos</a>
         </p>
-        <ul className="flex gap-6">
+        <ul className="flex flex-wrap gap-6">
           {SOCIAL.filter((s) => site.social[s.key]).map((s) => (
             <li key={s.key}>
               <a href={site.social[s.key]} target="_blank" rel="noopener noreferrer" className="hover:text-fg">

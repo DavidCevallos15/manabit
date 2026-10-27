@@ -1,178 +1,117 @@
 <div align="center">
 
-<img src="docs/cover.png" alt="Landing de Manabit: Webs que trabajan por tu negocio" width="100%" />
+<img src="docs/cover.png" alt="Manabit · Webs que trabajan por tu negocio" width="100%" />
 
 # manabit
 
 **Estudio de software · Portoviejo, Manabí**
+
 Webs que trabajan por tu negocio.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-1c1e35?logo=nextdotjs&logoColor=eeebda)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-19-1c1e35?logo=react&logoColor=eeebda)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-strict-1c1e35?logo=typescript&logoColor=eeebda)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-1c1e35?logo=tailwindcss&logoColor=eeebda)](https://tailwindcss.com)
-[![Motion](https://img.shields.io/badge/Motion-14-1c1e35?logo=framer&logoColor=eeebda)](https://motion.dev)
+by **[David Cevallos](https://davidcevallos.vercel.app)**
 
-by **David Cevallos**
+[Ver la web](https://manabit-three.vercel.app/) · [Pedir diagnóstico](https://wa.me/593979107716?text=Hola%2C%20quiero%20el%20DIAGN%C3%93STICO%20gratis%20para%20mi%20negocio.)
 
 </div>
 
----
-
 ## Qué es
 
-Manabit es un estudio de software de Portoviejo que instala y opera sistemas web para negocios de servicio: barberías, consultorios, gimnasios, academias y talleres. El sistema convierte los mensajes que llegan por WhatsApp, redes y web en citas confirmadas, y cada mes muestra los números.
+Landing de Manabit, estudio de software de David Cevallos en Portoviejo. Presenta sistemas web para negocios de servicio y permite pedir un diagnóstico gratis por WhatsApp: página, reservas, confirmaciones y seguimiento de resultados.
 
-Este repositorio es la landing del estudio. Su trabajo es uno solo: que el dueño de un negocio pida el **diagnóstico gratis** por WhatsApp.
+## Qué incluye
+
+- **Carga inicial:** loader SVG original del kit. La M se revela y el bit coral late. Espera la carga del documento y las fuentes, con una entrada breve de 850 ms y un límite de 3 segundos. Un respaldo independiente retira la pantalla a los 4,5 segundos si falla la hidratación. Con movimiento reducido se omite la espera. Sin JavaScript no se muestra una pantalla de carga que bloquee el contenido.
+- **Hero:** video original de inicio, chat de ejemplo y diagnóstico por WhatsApp.
+- **Calculadora:** estimación con los valores introducidos por el visitante; no representa resultados de clientes.
+- **Sistema y planes:** Chiflebit, Tongabit y Toquillabit; alcance y precio se acuerdan tras el diagnóstico.
+- **Trabajos:** cuatro proyectos publicados y seis demos de diseño, con capturas reales reutilizadas del portafolio de David. Los proyectos abren sus webs; las demos abren una consulta específica por WhatsApp.
+- **El estudio:** presentación del fundador, avatar, portafolio y video ilustrado con reproducción manual.
+- **Proceso y FAQ:** del diagnóstico a la operación mensual.
+- **Cierre:** video original, contacto, firma y wordmark grande.
+- **Globales:** menú móvil, temas noche/vainilla, Lenis, animaciones de entrada y controles accesibles.
 
 ## Vistazo
 
-| Hero con demo en vivo | Planes en pila 3D |
-|---|---|
-| ![Hero: el emblema se arma y un chat de WhatsApp termina en cita confirmada](docs/hero.png) | ![Planes Chiflebit, Tongabit y Toquillabit apilados en 3D](docs/planes.png) |
+![Hero](docs/hero.png)
 
-| Cierre | Móvil |
-|---|---|
-| ![Cierre con el wordmark gigante y el bit en coral](docs/cierre.png) | <img src="docs/mobile.png" alt="Vista en móvil" width="260" /> |
+![Proyectos publicados](docs/trabajos.png)
 
-## Secciones
-
-| # | Sección | Qué hace | Técnica |
-|---|---|---|---|
-| 1 | Hero | El emblema se arma (barrido de la M y el bit cae) y un chat de ejemplo pasa de mensaje a **cita confirmada** en bucle | `motion` + `AnimatePresence`, se pausa fuera de pantalla |
-| 2 | Rubros | Dos cintas infinitas con los tipos de negocio | `@keyframes` en CSS, pausa al pasar el puntero |
-| 3 | Problema | Calculadora: mensajes por semana × % sin respuesta × % que agenda × valor de la cita = lo que se escapa al mes | Sliders nativos + contador con `useSpring` |
-| 4 | Sistema | Qué se instala: página, reservas, WhatsApp, panel, reporte y mejoras | Bento con entrada escalonada |
-| 5 | Planes | **Chiflebit**, **Tongabit** y **Toquillabit** | Sticky stack 3D ligado al scroll |
-| 6 | Trabajos | 8 landings de muestra | Scroll horizontal pinneado |
-| 7 | Proceso | Del diagnóstico gratis al reporte mensual | Línea que se rellena con el scroll |
-| 8 | Preguntas | FAQ | Acordeón accesible con `grid-template-rows` |
-| 9 | Cierre | CTA y `manabit` gigante; el *bit* entra al final en coral | Variantes de `motion` |
-
-**Globales:** header flotante, CTA fijo tras el hero, cursor-píxel coral con spring, botones magnéticos, spotlight que sigue al puntero, smooth scroll con Lenis y tema noche/vainilla con transición radial (View Transitions).
-
-## Los planes
-
-Los nombres vienen de Manabí y terminan en *bit*, como la marca.
-
-| Plan | Nivel | Qué incluye |
-|---|---|---|
-| **Chiflebit** | Básico · Presencia | Landing de una vista, botón de WhatsApp, ubicación, dominio y reporte de mensajes |
-| **Tongabit** | Medio · Sistema | Todo lo anterior + reservas, confirmación por WhatsApp, panel y reporte mensual |
-| **Toquillabit** | Premium · A la medida | Software de gestión diseñado sobre el flujo del negocio |
-
-Los precios no se publican: cada botón abre WhatsApp con el mensaje **PLANES**.
+![Carga inicial de Manabit](docs/carga.png)
 
 ## Stack
 
-| Capa | Elección |
-|---|---|
-| Framework | Next.js 16 (App Router, `output: "export"`) |
-| UI | React 19 + TypeScript estricto (`noUncheckedIndexedAccess`) |
-| Estilos | Tailwind CSS v4 con tokens en `@theme` |
-| Animación | `motion` (`motion/react`) + `@keyframes` para los bucles |
-| Scroll | Lenis sobre scroll nativo (compatible con `useScroll`) |
-| Fuentes | Bricolage Grotesque (eje `opsz`) y JetBrains Mono, servidas en local con Fontsource |
+Next.js 16 · React 19 · TypeScript estricto · Tailwind CSS v4 · Motion · Lenis. Fuentes locales Bricolage Grotesque y JetBrains Mono. Exportación estática, sin un backend de formularios ni servicios nuevos.
 
-## Empezar
+## Desarrollo
 
 Requiere Node.js 20.9 o superior.
 
 ```bash
-git clone https://github.com/DavidCevallos15/manabit.git
-cd manabit
-npm install
-npm run dev          # http://localhost:3000
+npm ci
+npm run dev
+npm run typecheck
+npm run build
 ```
 
-| Script | Qué hace |
-|---|---|
-| `npm run dev` | Servidor de desarrollo |
-| `npm run typecheck` | `tsc --noEmit` |
-| `npm run build` | Export estático en `out/` |
+`npm run build` genera `out/`. Para revisar exactamente esa salida:
 
-## Configuración
+```bash
+python -m http.server 4173 --directory out
+```
 
-Todo lo del negocio vive en [`src/lib/site.ts`](src/lib/site.ts):
+Abre http://localhost:4173. `next start` no sirve una exportación estática.
+
+## Contacto y contenidos
+
+`src/lib/site.ts` concentra los datos públicos:
 
 ```ts
-export const site = {
-  whatsappNumber: "",   // 5939XXXXXXXX, sin "+"
-  email: "",
-  social: { instagram: "", tiktok: "", linkedin: "" },
-  // …
-};
+whatsappNumber: "593979107716", // formato internacional sin + ni espacios
+email: "jimdav1506ceva@gmail.com",
+url: "https://manabit-three.vercel.app",
+portfolio: "https://davidcevallos.vercel.app",
 ```
 
-- Sin número, los botones abren WhatsApp con el mensaje listo para elegir chat.
-- Las redes y el correo vacíos no se muestran en el footer.
-- Los textos de planes, trabajos, proceso y FAQ están en [`src/content`](src/content), separados de los componentes.
+Los botones de diagnóstico, planes y demos usan `waLink()` y preparan el mensaje. No envían nada automáticamente. LinkedIn enlaza al perfil público de David. Instagram y TikTok no aparecen hasta que se configuren sus URLs.
 
-### Capturas reales de los trabajos
+- `src/content/work.ts`: proyectos, demos, enlaces y descripciones.
+- `src/content/plans.ts`: alcance de los planes.
+- `src/content/process.ts` y `faq.ts`: proceso y preguntas frecuentes.
+- `src/components/brand/PageBoot.tsx`: duración y salida del loader.
+- `src/components/brand/BrandVideo.tsx`: videos del kit, tema y controles de pausa/repetición.
 
-Las 8 muestras se dibujan en código con la paleta de cada rubro. Para usar una captura real, pon la imagen en `public/trabajos/<rubro>.webp` y agrega `image: "/trabajos/<rubro>.webp"` a esa muestra en [`src/content/samples.ts`](src/content/samples.ts).
+## Recursos
 
-## Estructura
+| Carpeta | Contenido |
+| --- | --- |
+| `public/media/brand/` | Videos de inicio/cierre del kit Manabit, medianoche/vainilla |
+| `public/media/projects/` | Capturas optimizadas de proyectos y demos |
+| `public/media/studio/` | Avatar, video ilustrado y poster del portafolio personal |
+| `public/opengraph-image.png` | Portada para compartir, 1200 × 630 |
+| `docs/` | Portada, capturas y notas de revisión |
 
-```
-src/
-├── app/
-│   ├── layout.tsx          # fuentes, metadatos, tema sin destello
-│   ├── page.tsx            # composición de secciones
-│   └── globals.css         # tokens noche/vainilla, easings, utilidades cut
-├── components/
-│   ├── brand/              # ManabitLogo + contornos del logo
-│   ├── layout/             # SiteHeader, ThemeToggle, FloatingCta
-│   ├── motion/             # Reveal, Marquee, StickyStack3D, Magnetic,
-│   │                       # PixelCursor, Spotlight, SmoothScroll
-│   └── ui/                 # Button, SectionHead, PixelGrid
-├── content/                # planes, muestras, proceso, FAQ
-├── lib/                    # site.ts, motion.ts, hooks.ts, cn.ts
-└── sections/               # Hero, Rubros, Problem, Bento, Plans,
-                            # Work, Process, Faq, Closing
-```
+Los videos de marca se reproducen sin sonido al entrar en pantalla y se pausan al salir; permiten pausa y repetición. Con movimiento reducido muestran el logo estático. El video del estudio requiere pulsar reproducir. Las imágenes y los videos se sirven localmente.
+
+Procedencia: kit de marca proporcionado por David y [DavidCevallos15/personal_web](https://github.com/DavidCevallos15/personal_web), en concreto `frontend/src/data/{projects,studio,profile}.ts` y `frontend/public/media/`. Se muestran proyectos personales y profesionales con su contexto original; no se atribuyen todos como clientes de Manabit ni se publican cifras de resultados.
 
 ## Marca
 
-| Token | Hex | Uso |
-|---|---|---|
-| Noche | `#1C1E35` | Fondo por defecto |
-| Medianoche | `#282B4A` | Superficies y tinta sobre vainilla |
-| Vainilla | `#EEEBDA` | Texto sobre noche y fondo del tema claro |
-| Coral | `#D4573F` | El bit sobre fondo claro |
-| Coral claro | `#F08A74` | El bit y acentos sobre fondo oscuro |
+| Color | Hex |
+| --- | --- |
+| Noche | `#1C1E35` |
+| Medianoche | `#282B4A` |
+| Vainilla | `#EEEBDA` |
+| Coral | `#D4573F` |
+| Coral claro | `#F08A74` |
 
-- El coral aparece una vez por pieza: es el *bit* del logo.
-- Las placas usan el mismo chaflán del emblema (`cut`, `cut-sm`, `cut-lg`).
-- Easings por intención: `feedback`, `interactive`, `disclosure` y `reveal` en [`src/lib/motion.ts`](src/lib/motion.ts).
+Se conservan los contornos originales del logo, los chaflanes y la firma **by David Cevallos** junto al logo y en el footer.
 
-## Accesibilidad y rendimiento
+## Publicación
 
-- Con `prefers-reduced-motion`: sin Lenis, cursor, imán ni spotlight; la pila de planes queda plana y los trabajos se recorren con scroll manual.
-- En pantallas táctiles no hay cursor ni imán; en móvil los planes se apilan en flujo normal.
-- Contraste ≥ 4.5:1 en todos los pares de texto de ambos temas.
-- Solo se animan `transform`, `opacity` y `clip-path`; los bucles corren en CSS.
-- Fuentes locales (sin peticiones a Google Fonts) y cero imágenes externas.
+El repositorio está conectado a Vercel. La rama de producción es `main`. El build incluye URL canónica, metadatos Open Graph/Twitter, `robots.txt` y `sitemap.xml`. Al usar un dominio propio, cambia `site.url` y vuelve a desplegar.
 
-## Despliegue
-
-El build genera un sitio estático en `out/`.
-
-- **Vercel:** importa el repo; detecta Next.js sin configuración.
-- **Azure Static Web Apps:** `app_location: "/"`, `output_location: "out"`.
-
-## Pendiente
-
-- [ ] Número de WhatsApp, correo y redes en `src/lib/site.ts`
-- [ ] Imagen Open Graph (1200 × 630)
-- [ ] Dominio (`manabit.ec` / `manabit.dev`)
-- [ ] Capturas reales de las landings de muestra
+Pendiente comercial: confirmar dominio propio, redes de Manabit y precios. Los precios no se inventan ni se publican como una oferta confirmada.
 
 ---
 
-<div align="center">
-
-**manabit** · Estudio de software · Portoviejo, Manabí
-Diseñado y desarrollado by **[David Cevallos](https://github.com/DavidCevallos15)**
-
-</div>
+Diseñado y desarrollado by **[David Cevallos](https://github.com/DavidCevallos15)**.

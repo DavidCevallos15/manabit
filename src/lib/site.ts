@@ -1,18 +1,21 @@
 /**
- * Datos del negocio. Completa `whatsappNumber` (formato internacional sin "+": 5939XXXXXXXX)
- * y las redes cuando estén reservadas; los enlaces vacíos no se muestran.
+ * Datos públicos del negocio. WhatsApp en formato internacional sin "+".
+ * Las redes sin URL no se muestran.
  */
 export const site = {
   name: "Manabit",
   descriptor: "Estudio de software",
   tagline: "Webs que trabajan por tu negocio.",
   zone: "Portoviejo y Manta",
-  whatsappNumber: "",
-  email: "",
+  url: "https://manabit-three.vercel.app",
+  founder: "David Cevallos",
+  portfolio: "https://davidcevallos.vercel.app",
+  whatsappNumber: "593979107716",
+  email: "jimdav1506ceva@gmail.com",
   social: {
     instagram: "",
     tiktok: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/jimmy-david-cevallos-zambrano-859876191/",
   },
 } as const;
 

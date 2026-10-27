@@ -7,7 +7,8 @@ import { useMediaQuery } from "@/lib/hooks";
 export function StickyStack3D({ items }: { items: ReactNode[] }) {
   // En pantallas bajas o angostas las tarjetas no caben en una vista: se apilan en flujo normal.
   const roomy = useMediaQuery("(min-width: 768px) and (min-height: 680px)");
-  if (!roomy) {
+  const reduce = useReducedMotion();
+  if (!roomy || reduce) {
     return (
       <div className="grid gap-6 px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
         {items.map((node, i) => (

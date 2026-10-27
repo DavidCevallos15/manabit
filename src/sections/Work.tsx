@@ -1,78 +1,49 @@
 "use client";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import { SAMPLES } from "@/content/samples";
-import { SectionHead } from "@/components/ui/SectionHead";
-import { useMediaQuery } from "@/lib/hooks";
-import { SampleMock } from "./work/SampleMock";
 
-const PIN_QUERY = "(min-width: 768px) and (prefers-reduced-motion: no-preference)";
+import { useState } from "react";
+import { Reveal } from "@/components/motion/Reveal";
+import { PROJECTS, TEMPLATES, type WorkItem } from "@/content/work";
+import { waLink } from "@/lib/site";
 
-/** Landings de muestra en scroll horizontal pinneado (desktop). En móvil o con movimiento reducido: fila con scroll manual. */
 export function Work() {
-  const pinned = useMediaQuery(PIN_QUERY);
-  const cards = SAMPLES.map((s) => <SampleMock key={s.domain} sample={s} />);
-
-  if (!pinned) {
-    return (
-      <section id="trabajos" className="py-[var(--spacing-section-y)]">
-        <Head />
-        <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-[var(--spacing-section-x)] pb-4 [&>*]:snap-start">
-          {cards}
-        </div>
-      </section>
-    );
-  }
-  return <PinnedWork>{cards}</PinnedWork>;
-}
-
-function Head() {
+  const [view, setView] = useState<"projects" | "templates">("projects");
+  const items = view === "projects" ? PROJECTS : TEMPLATES;
   return (
-    <div className="mx-auto w-full max-w-7xl px-[var(--spacing-section-x)]">
-      <SectionHead
-        eyebrow="Trabajos"
-        title="Así se ve el trabajo."
-        lead="Landings de muestra para ocho tipos de negocio. Son piezas de portafolio, no clientes."
-      />
-    </div>
+    <section id="trabajos" className="mx-auto max-w-7xl px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
+      <Reveal className="flex flex-wrap items-end justify-between gap-8">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl font-extrabold leading-none tracking-[-0.035em] md:text-6xl">Del diseño a la web.</h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted">Proyectos de David Cevallos y demos para imaginar el siguiente paso de tu negocio.</p>
+        </div>
+        <div className="work-filters flex flex-wrap gap-2" aria-label="Filtrar trabajos">
+          <button type="button" aria-pressed={view === "projects"} onClick={() => setView("projects")}>Proyectos publicados <span>{PROJECTS.length}</span></button>
+          <button type="button" aria-pressed={view === "templates"} onClick={() => setView("templates")}>Demos por rubro <span>{TEMPLATES.length}</span></button>
+        </div>
+      </Reveal>
+      <p className="sr-only" role="status">{items.length} {view === "projects" ? "proyectos publicados" : "demos por rubro"}</p>
+      <div className="work-grid mt-12" key={view}>
+        {items.map((item, index) => <WorkCard key={item.image} item={item} index={index} />)}
+      </div>
+      {view === "templates" && <p className="mt-7 text-base text-muted">Demos de diseño adaptables a tu marca. Consulta por WhatsApp para ver cuál encaja con tu negocio.</p>}
+    </section>
   );
 }
 
-/** Se monta solo cuando aplica el pin, para que useScroll enganche el ref desde el primer render. */
-function PinnedWork({ children }: { children: ReactNode }) {
-  const section = useRef<HTMLElement>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const [distance, setDistance] = useState(0);
-
-  useEffect(() => {
-    const el = track.current;
-    if (!el) return;
-    const measure = () => setDistance(Math.max(0, el.scrollWidth - window.innerWidth));
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    window.addEventListener("resize", measure);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-    };
-  }, []);
-
-  const { scrollYProgress } = useScroll({ target: section, offset: ["start start", "end end"] });
-  const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
-  const progress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
+function WorkCard({ item, index }: { item: WorkItem; index: number }) {
+  const href = item.href ?? waLink(`Hola, quiero conocer la demo ${item.title} para mi negocio de ${item.type.toLowerCase()}.`);
   return (
-    <section id="trabajos" ref={section} style={{ height: `calc(100svh + ${distance}px)` }} className="relative">
-      <div className="sticky top-0 flex h-svh flex-col justify-center gap-10 overflow-hidden">
-        <Head />
-        <motion.div ref={track} style={{ x }} className="flex w-max gap-8 px-[var(--spacing-section-x)] will-change-transform">
-          {children}
-        </motion.div>
-        <div className="mx-auto h-px w-full max-w-7xl bg-line" aria-hidden>
-          <motion.div className="h-px bg-fg" style={{ width: progress }} />
+    <Reveal delay={Math.min(index * 0.06, 0.18)} className="work-item">
+      <article>
+        <a href={href} target="_blank" rel="noopener noreferrer" className="work-preview block overflow-hidden bg-surface" aria-label={`${item.href ? "Visitar" : "Consultar demo de"} ${item.title} (abre una pestaña nueva)`}>
+          <img src={`/media/projects/${item.image}-card.webp`} alt={`Captura de la web ${item.title}`} width={1200} height={750} loading="lazy" className="aspect-[8/5] w-full object-cover object-top transition-transform duration-500 hover:scale-[1.025]" />
+        </a>
+        <div className="pt-5">
+          <p className="text-base text-muted">{item.type}</p>
+          <h3 className="mt-2 text-2xl font-extrabold tracking-tight"><a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 hover:text-accent">{item.title} <span aria-hidden className="text-xl">↗</span></a></h3>
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-muted">{item.description}</p>
+          <a href={href} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-bold hover:text-accent">{item.href ? "Visitar web" : "Consultar esta demo"} <span className="ml-2" aria-hidden>→</span></a>
         </div>
-      </div>
-    </section>
+      </article>
+    </Reveal>
   );
 }

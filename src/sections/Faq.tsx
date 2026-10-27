@@ -42,6 +42,7 @@ export function Faq() {
                 id={panel}
                 role="region"
                 aria-labelledby={btn}
+                aria-hidden={!isOpen}
                 className={cn(
                   "grid transition-[grid-template-rows] duration-[320ms] ease-[var(--ease-disclosure)]",
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",

@@ -12,19 +12,23 @@ import { Problem } from "@/sections/Problem";
 import { Process } from "@/sections/Process";
 import { Rubros } from "@/sections/Rubros";
 import { Work } from "@/sections/Work";
+import { About } from "@/sections/About";
+import { PageBoot } from "@/components/brand/PageBoot";
 
 export default function Home() {
   return (
+    <PageBoot>
     <SmoothScroll>
       <Spotlight />
       <SiteHeader />
-      <main className="relative z-10">
+      <main id="contenido" className="relative z-10">
         <Hero />
         <Rubros />
         <Problem />
         <Bento />
         <Plans />
         <Work />
+        <About />
         <Process />
         <Faq />
       </main>
@@ -34,5 +38,6 @@ export default function Home() {
       <FloatingCta />
       <PixelCursor />
     </SmoothScroll>
+    </PageBoot>
   );
 }
