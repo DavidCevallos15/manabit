@@ -151,7 +151,6 @@
 .boot-fallback main [style], .boot-fallback header[style] { opacity: 1 !important; transform: none !important; }
 .brand-film { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg); }
 .brand-film-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
-.work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 32px; }
 .work-filters button { display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 48px; background: var(--surface); font-size: 16px; cursor: pointer; transition: background 160ms, color 160ms; }
 .work-filters button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
 .work-filters button:hover { background: var(--fg); color: var(--bg); }
@@ -159,7 +158,6 @@
 .skip-link { position: fixed; top: 12px; left: 12px; z-index: 1100; padding: 14px 20px; background: var(--fg); color: var(--bg); transform: translateY(-150%); }
 .skip-link:focus { transform: none; }
 @media (max-width: 639px) {
-  .work-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .work-filters { width: 100%; }
   .work-filters button { flex: 1; justify-content: center; padding: 12px 10px; font-size: 14px; }
 }
@@ -214,4 +212,29 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Hero: el mar de listones se apaga hacia el titular (izquierda) y hacia la siguiente sección. */
+.hero-slats {
+  -webkit-mask-image: linear-gradient(to right, rgb(0 0 0 / 0.28), #000 62%), linear-gradient(to bottom, #000 72%, transparent);
+  mask-image: linear-gradient(to right, rgb(0 0 0 / 0.28), #000 62%), linear-gradient(to bottom, #000 72%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+@media (max-width: 639px) {
+  /* En móvil el texto ocupa todo el ancho: el fondo baja de intensidad. */
+  .hero-slats { opacity: 0.7; }
+}
+
+/* Trabajos: carrusel circular (React Bits · CircularCarousel) con la voz tipográfica de la marca. */
+.work-carousel .circular-carousel:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+.work-carousel .circular-carousel__inner { background: var(--bg); }
+.work-carousel .circular-carousel__caption { bottom: 14px; color: var(--fg); }
+.work-carousel .circular-carousel__title { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; }
+.work-carousel .circular-carousel__subtitle { font-size: 0.95rem; font-weight: 400; letter-spacing: 0; color: var(--muted); opacity: 1; }
+/* El contador propio va bajo el carrusel: el del componente contaría las tarjetas repetidas. */
+.work-carousel .circular-carousel__count { display: none; }
+.work-description { animation: work-description 420ms var(--ease-disclosure) both; }
+@keyframes work-description {
+  from { opacity: 0; transform: translateY(6px); }
 }
