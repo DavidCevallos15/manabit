@@ -10,7 +10,7 @@ Tu área de sistemas, en Manabí.
 
 by **[David Cevallos](https://davidcevallos.me)**
 
-[Ver la web](https://manabit-three.vercel.app/) · [Servicios y precios](https://manabit-three.vercel.app/servicios) · [WhatsApp](https://wa.me/593979107716)
+[Ver la web](https://manabitsistemas.vercel.app/) · [Servicios y precios](https://manabitsistemas.vercel.app/servicios) · [WhatsApp](https://wa.me/593979107716)
 
 </div>
 
@@ -76,7 +76,7 @@ Abre http://localhost:4173. `next start` no sirve una exportación estática.
 ```ts
 whatsappNumber: "593979107716", // formato internacional sin + ni espacios
 email: "jimdav1506ceva@gmail.com",
-url: "https://manabit-three.vercel.app",
+url: "https://manabitsistemas.vercel.app",
 portfolio: "https://davidcevallos.me",
 ```
 

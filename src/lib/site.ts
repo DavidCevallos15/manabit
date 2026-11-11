@@ -8,7 +8,7 @@ export const site = {
   descriptor: "Sistemas",
   tagline: "Tu área de sistemas, en Manabí.",
   zone: "Portoviejo y Manta",
-  url: "https://manabit-three.vercel.app",
+  url: "https://manabitsistemas.vercel.app",
   founder: "David Cevallos",
   portfolio: "https://davidcevallos.me",
   whatsappNumber: "593979107716",
