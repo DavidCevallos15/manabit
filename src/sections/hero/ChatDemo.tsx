@@ -45,12 +45,12 @@ export function ChatDemo() {
     <div
       ref={ref}
       className="cut relative w-full max-w-[380px] bg-[#f6f4ea] p-5 text-[#282b4a] shadow-2xl"
-      aria-label="Ejemplo: un cliente pide turno por WhatsApp y recibe la cita confirmada"
+      aria-label="Vista previa de Tongabit, en desarrollo: un cliente pide turno y recibe la cita confirmada"
       role="img"
     >
       <div className="flex items-center justify-between font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#5d6079]">
-        <span>WhatsApp · Barbería</span>
-        <span>Ejemplo</span>
+        <span>Tongabit · Barbería</span>
+        <span>Vista previa</span>
       </div>
 
       <div className="mt-4 flex min-h-[284px] flex-col gap-2.5" aria-hidden>

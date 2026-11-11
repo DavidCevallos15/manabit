@@ -1,7 +1,6 @@
 export const STEPS: readonly { title: string; body: string }[] = [
-  { title: "Diagnóstico gratis", body: "Revisamos por dónde te llegan los mensajes y cuántos se pierden. En persona o por mensaje directo." },
-  { title: "Propuesta", body: "Alcance, precio cerrado y qué números vamos a medir desde el primer mes." },
-  { title: "Instalación", body: "Página, reservas, WhatsApp y panel, conectados entre sí." },
-  { title: "Operación mensual", body: "Mantenimiento y mejoras sobre la misma plataforma, sin empezar de cero." },
-  { title: "Reporte mensual", body: "Citas confirmadas, inasistencias y clientes recuperados, cada mes." },
+  { title: "Me escribes", body: "Por WhatsApp, con lo que necesitas. Te respondo yo." },
+  { title: "Te confirmo el precio", body: "Lo que está en la lista tiene precio fijo. Lo que es a la medida lo cotizamos después de conversar." },
+  { title: "Lo dejo funcionando", body: "Instalo, configuro o desarrollo, y te muestro el resultado antes de cerrar." },
+  { title: "Sigo a un mensaje", body: "Si algo falla o necesitas un cambio, me escribes al mismo WhatsApp." },
 ];

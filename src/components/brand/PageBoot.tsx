@@ -1,13 +1,17 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { site } from "@/lib/site";
 import { ManabitLoader } from "./ManabitLoader";
 
 const ReadyContext = createContext(false);
 export const usePageReady = () => useContext(ReadyContext);
 
-/** Espera a la página y las fuentes. Nunca depende de descargar un video. */
-export function PageBoot({ children }: { children: ReactNode }) {
+/**
+ * Espera a la página y las fuentes. Nunca depende de descargar un video.
+ * `instant` retira el loader al hidratar (páginas de destino de anuncios, como /servicios).
+ */
+export function PageBoot({ children, instant = false }: { children: ReactNode; instant?: boolean }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -28,7 +32,7 @@ export function PageBoot({ children }: { children: ReactNode }) {
     let entranceTimer: number;
     const entrance = new Promise<void>((resolve) => { entranceTimer = window.setTimeout(resolve, 850); });
     const timeout = window.setTimeout(finish, 3000);
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) finish();
+    if (instant || window.matchMedia("(prefers-reduced-motion: reduce)").matches) finish();
     else Promise.all([loaded, document.fonts.ready, entrance]).then(finish, finish);
     return () => {
       disposed = true;
@@ -37,13 +41,13 @@ export function PageBoot({ children }: { children: ReactNode }) {
       window.removeEventListener("load", onLoad);
       document.documentElement.classList.remove("booting");
     };
-  }, []);
+  }, [instant]);
 
   return (
     <ReadyContext.Provider value={ready}>
       <div id="page-loader" className="page-loader" aria-hidden={ready}>
-        <ManabitLoader size={64} label="Cargando Manabit" />
-        <p>Webs que trabajan por tu negocio.</p>
+        <ManabitLoader size={64} label={`Cargando ${site.name}`} />
+        <p>{site.tagline}</p>
       </div>
       {children}
     </ReadyContext.Provider>

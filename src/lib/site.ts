@@ -3,14 +3,17 @@
  * Las redes sin URL no se muestran.
  */
 export const site = {
-  name: "Manabit",
-  descriptor: "Estudio de software",
-  tagline: "Webs que trabajan por tu negocio.",
+  name: "Manabit Sistemas",
+  shortName: "Manabit",
+  descriptor: "Sistemas",
+  tagline: "Tu área de sistemas, en Manabí.",
   zone: "Portoviejo y Manta",
   url: "https://manabit-three.vercel.app",
   founder: "David Cevallos",
-  portfolio: "https://davidcevallos.vercel.app",
+  portfolio: "https://davidcevallos.me",
   whatsappNumber: "593979107716",
+  /** Cómo se lee el número en pantalla. */
+  whatsappDisplay: "+593 97 910 7716",
   email: "jimdav1506ceva@gmail.com",
   social: {
     instagram: "",
@@ -25,4 +28,8 @@ export function waLink(text: string): string {
   return `${base}?text=${encodeURIComponent(text)}`;
 }
 
-export const CTA_DIAGNOSTICO = waLink("Hola, quiero el DIAGNÓSTICO gratis para mi negocio.");
+/** Consulta general: header, botón flotante y cierre. */
+export const CTA_WHATSAPP = waLink("Hola, vi la web de Manabit Sistemas y quiero hacer una consulta.");
+
+/** Ruta de la lista de precios. */
+export const SERVICES_PATH = "/servicios";

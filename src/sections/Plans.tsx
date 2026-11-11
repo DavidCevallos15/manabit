@@ -1,19 +1,11 @@
 import { Magnetic } from "@/components/motion/Magnetic";
 import { StickyStack3D } from "@/components/motion/StickyStack3D";
 import { Button } from "@/components/ui/Button";
+import { PlanName } from "@/components/ui/PlanName";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { PLANS, type Plan } from "@/content/plans";
 import { cn } from "@/lib/cn";
 import { waLink } from "@/lib/site";
-
-function PlanName({ stem, className }: { stem: string; className?: string }) {
-  return (
-    <span className={cn("font-extrabold tracking-[-0.04em]", className)}>
-      {stem}
-      <span className="font-mono tracking-[-0.06em]">bit</span>
-    </span>
-  );
-}
 
 function PlanCard({ plan, index }: { plan: Plan; index: number }) {
   const featured = plan.featured === true;

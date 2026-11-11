@@ -1,7 +1,7 @@
 import { Marquee } from "@/components/motion/Marquee";
 
-const ROW_A = ["Barberías", "Consultorios", "Gimnasios", "Academias", "Talleres"] as const;
-const ROW_B = ["Cafeterías", "Comedores", "Reposterías", "Estudios de arquitectura", "Hamburgueserías"] as const;
+const ROW_A = ["Barberías", "Consultorios", "Talleres", "Restaurantes", "Tiendas"] as const;
+const ROW_B = ["Oficinas", "Profesionales", "Emprendedores", "Gimnasios", "Reposterías"] as const;
 
 function Item({ label, muted = false }: { label: string; muted?: boolean }) {
   return (
@@ -20,11 +20,11 @@ function Item({ label, muted = false }: { label: string; muted?: boolean }) {
   );
 }
 
-/** Para quién trabajamos: dos cintas en sentidos opuestos. */
+/** Para quién trabajo: dos cintas en sentidos opuestos. */
 export function Rubros() {
   return (
-    <section aria-label="Negocios con los que trabajamos" className="relative border-y border-line py-12 md:py-16">
-      <p className="eyebrow mb-8 px-[var(--spacing-section-x)] text-muted">Negocios de servicio con agenda</p>
+    <section aria-label="Para quién trabajo" className="relative border-y border-line py-12 md:py-16">
+      <p className="eyebrow mb-8 px-[var(--spacing-section-x)] text-muted">Para quién trabajo</p>
       <div className="grid gap-6">
         <Marquee duration={42}>
           {ROW_A.map((r) => (

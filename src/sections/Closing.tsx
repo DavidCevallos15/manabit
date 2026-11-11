@@ -5,7 +5,7 @@ import { Magnetic } from "@/components/motion/Magnetic";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { ease } from "@/lib/motion";
-import { CTA_DIAGNOSTICO, site } from "@/lib/site";
+import { CTA_WHATSAPP, site } from "@/lib/site";
 import { BrandVideo } from "@/components/brand/BrandVideo";
 
 const SOCIAL = [
@@ -23,20 +23,20 @@ export function Closing() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-[var(--spacing-section-x)] lg:grid-cols-[1.15fr_0.85fr]">
         <div>
         <Reveal>
-          <p className="eyebrow text-muted">Diagnóstico gratis</p>
+          <p className="eyebrow text-muted">Contacto</p>
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="mt-4 max-w-4xl text-5xl font-extrabold leading-[0.98] tracking-[-0.04em] md:text-7xl">
-            Hablemos de tu negocio.
+            ¿Qué necesitas? Escríbeme.
           </h2>
         </Reveal>
         <Reveal delay={0.16} className="mt-10 flex flex-wrap items-center gap-5">
           <Magnetic>
-            <Button href={CTA_DIAGNOSTICO} size="lg">
-              Escríbeme DIAGNÓSTICO <span aria-hidden>→</span>
+            <Button href={CTA_WHATSAPP} size="lg">
+              Escríbeme por WhatsApp <span aria-hidden>→</span>
             </Button>
           </Magnetic>
-          <p className="font-mono text-sm font-bold text-muted">15 minutos · sin costo · {site.zone}</p>
+          <p className="font-mono text-sm font-bold text-muted">{site.whatsappDisplay} · {site.zone}</p>
         </Reveal>
         <a href={`mailto:${site.email}`} className="mt-6 inline-flex min-h-11 items-center text-base text-muted hover:text-fg">O escríbeme a {site.email}</a>
         </div>
@@ -71,7 +71,7 @@ export function Closing() {
 
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-line px-[var(--spacing-section-x)] py-8 text-sm text-muted md:flex-row md:items-center md:justify-between">
         <p>
-          © {year} {site.name} · {site.descriptor} · Portoviejo, Manabí ·{" "}
+          © {year} {site.name} · Portoviejo, Manabí ·{" "}
           <a href={site.portfolio} target="_blank" rel="noopener noreferrer" className="font-bold text-fg hover:text-accent">by David Cevallos</a>
         </p>
         <ul className="flex flex-wrap gap-6">

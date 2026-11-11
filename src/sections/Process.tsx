@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { STEPS } from "@/content/process";
 
-/** Del diagnóstico al reporte: la línea se rellena con el scroll. */
+/** Del primer mensaje al soporte: la línea se rellena con el scroll. */
 export function Process() {
   const list = useRef<HTMLOListElement>(null);
   const { scrollYProgress } = useScroll({ target: list, offset: ["start 75%", "end 55%"] });
@@ -15,9 +15,9 @@ export function Process() {
     <section id="proceso" className="mx-auto grid max-w-7xl gap-14 px-[var(--spacing-section-x)] py-[var(--spacing-section-y)] lg:grid-cols-[0.9fr_1.1fr]">
       <div className="lg:sticky lg:top-32 lg:self-start">
         <SectionHead
-          eyebrow="Cómo trabajamos"
+          eyebrow="Cómo trabajo"
           title="Cada paso deja algo que puedes ver."
-          lead="Del diagnóstico gratis a la operación mensual, sin letras chicas."
+          lead="Hablas conmigo de principio a fin, sin intermediarios."
         />
       </div>
       <ol ref={list} className="relative grid gap-12 pl-14">

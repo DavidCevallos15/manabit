@@ -1,23 +1,27 @@
 export const FAQ: readonly { q: string; a: string }[] = [
   {
-    q: "¿Cuánto cuesta?",
-    a: "Depende del plan y de tu negocio. Empezamos con un diagnóstico gratis y luego te paso una propuesta con precio cerrado, qué incluye y qué números vamos a medir.",
+    q: "¿Los precios de la web son los finales?",
+    a: "Sí. Lo que tiene precio en la lista es lo que pagas. Lo que dice «Cotización» o «Consúltalo» te lo paso por WhatsApp antes de empezar.",
   },
   {
-    q: "¿Necesito tener página web?",
-    a: "No. Si ya tienes una, vemos si se aprovecha. Si no, la página va incluida en cualquier plan.",
+    q: "¿Cuándo pago la ficha de Google Maps?",
+    a: "Cuando la veas funcionando. Voy a tu local, dejo la ficha y tu WhatsApp Business configurados, y recién ahí pagas.",
   },
   {
-    q: "¿Tengo que cambiar mi número de WhatsApp?",
-    a: "No. Se trabaja con el número que ya conocen tus clientes; en el diagnóstico vemos si te conviene pasarlo a WhatsApp Business.",
+    q: "¿Cómo se instala Office?",
+    a: "Puede ser remoto o en persona. Me escribes por WhatsApp, coordinamos y te lo dejo activado y funcionando. Si algo falla después, me escribes al mismo número.",
   },
   {
-    q: "¿Qué pasa después de la entrega?",
-    a: "Empieza la operación mensual: mantenimiento, mejoras sobre la misma plataforma y un reporte con tus citas confirmadas, inasistencias y clientes recuperados.",
+    q: "¿Qué necesito para tener mi página web?",
+    a: "Fotos de tu negocio, tu logo si lo tienes y la información que quieres que vean tus clientes. El diseño y la publicación los hago yo.",
+  },
+  {
+    q: "¿Qué es Tongabit?",
+    a: "Lo que estoy construyendo: un sistema que atiende los mensajes de tu web, agenda citas y te muestra los números del mes. El primer piloto corre en Manabit. Si te interesa, escríbeme y te aviso cuando abra.",
   },
   {
     q: "¿Solo trabajas en Portoviejo y Manta?",
-    a: "Ahí está el foco y ahí hago el diagnóstico en persona. Fuera de Manabí trabajo por videollamada; ya entregué un sitio para un consultorio en Estados Unidos.",
+    a: "Ahí está el foco y ahí puedo reunirme en persona. Fuera de Manabí trabajo por videollamada; ya entregué un sitio para un consultorio en Estados Unidos.",
   },
   {
     q: "¿Por qué los planes se llaman así?",
