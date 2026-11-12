@@ -2,7 +2,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ManabitLogo } from "@/components/brand/ManabitLogo";
 import { Magnetic } from "@/components/motion/Magnetic";
-import { CTA_WHATSAPP, SERVICES_PATH, site } from "@/lib/site";
+import { CLASSES_PATH, CTA_WHATSAPP, SERVICES_PATH, site } from "@/lib/site";
 import { dur, ease } from "@/lib/motion";
 import { ThemeToggle } from "./ThemeToggle";
 import { usePageReady } from "@/components/brand/PageBoot";
@@ -12,6 +12,7 @@ import { useState } from "react";
 /** Las anclas de la home se resuelven con "/" delante cuando estás en otra página. */
 const NAV = [
   { href: SERVICES_PATH, label: "Precios", page: true },
+  { href: CLASSES_PATH, label: "Clases", page: true },
   { href: "#trabajos", label: "Trabajos", page: false },
   { href: "#proceso", label: "Proceso", page: false },
   { href: "#preguntas", label: "Preguntas", page: false },

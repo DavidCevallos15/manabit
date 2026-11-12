@@ -18,7 +18,7 @@ export function About() {
         <Reveal delay={0.1}>
           <div className="mb-6 flex items-center gap-5">
             <img src="/media/studio/neutral.webp" alt="Avatar de David Cevallos" width={80} height={80} loading="lazy" className="size-20 object-cover object-top" />
-            <p className="text-lg"><strong>{site.founder}</strong><br /><span className="text-muted">Fundador · Desarrollador full-stack</span></p>
+            <p className="text-lg"><strong>{site.founderTitle}</strong><br /><span className="text-muted">Fundador · Desarrollador full-stack</span></p>
           </div>
           <p className="text-xl leading-relaxed">Soy David, de Manabit Sistemas. Te instalo lo que necesitas para trabajar y construyo sitios y sistemas web para profesionales y negocios: desde lo que ve tu cliente hasta el panel que usa tu equipo.</p>
           <p className="mt-5 text-lg leading-relaxed text-muted">Trabajo desde Portoviejo, con foco en Portoviejo y Manta. Hablas conmigo en la cotización, la instalación o el desarrollo, y el soporte. Fuera de Manabí, nos conectamos por videollamada.</p>

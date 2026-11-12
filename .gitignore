@@ -3,3 +3,10 @@ node_modules
 out
 next-env.d.ts
 *.tsbuildinfo
+
+# Variables locales
+.env*.local
+
+# Emulador de Firebase
+*-debug.log
+.firebase/

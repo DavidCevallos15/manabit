@@ -10,6 +10,8 @@ export const site = {
   zone: "Portoviejo y Manta",
   url: "https://manabitsistemas.vercel.app",
   founder: "David Cevallos",
+  /** Cómo se presenta en la web: video del home, sección del estudio y clases. */
+  founderTitle: "Ing. David Cevallos",
   portfolio: "https://davidcevallos.me",
   whatsappNumber: "593979107716",
   /** Cómo se lee el número en pantalla. */
@@ -33,3 +35,7 @@ export const CTA_WHATSAPP = waLink("Hola, vi la web de Manabit Sistemas y quiero
 
 /** Ruta de la lista de precios. */
 export const SERVICES_PATH = "/servicios";
+
+/** Página de las clases de IA. Su ancla de reseñas es el link que se comparte al terminar cada clase. */
+export const CLASSES_PATH = "/clases";
+export const REVIEWS_ANCHOR = "resenas";

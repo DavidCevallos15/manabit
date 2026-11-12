@@ -9,6 +9,7 @@ import { Building } from "@/sections/Building";
 import { Closing } from "@/sections/Closing";
 import { Faq } from "@/sections/Faq";
 import { Hero } from "@/sections/Hero";
+import { Presentation } from "@/sections/Presentation";
 import { Process } from "@/sections/Process";
 import { Rubros } from "@/sections/Rubros";
 import { ServicesPreview } from "@/sections/ServicesPreview";
@@ -27,6 +28,7 @@ export default function Home() {
         <SiteHeader />
         <main id="contenido" className="relative z-10">
           <Hero />
+          <Presentation />
           <Rubros />
           <ServicesPreview />
           <Work />

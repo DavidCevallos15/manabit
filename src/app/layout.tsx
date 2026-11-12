@@ -42,8 +42,8 @@ export const viewport: Viewport = {
 
 /** Aplica el tema guardado antes del primer pintado (evita el destello). */
 const themeScript = `try{var t=localStorage.getItem('manabit-theme');if(t==='paper'||t==='night')document.documentElement.dataset.theme=t}catch(e){}`;
-/** Páginas de destino de anuncios: sin pantalla de carga para que pinten de inmediato. */
-const NO_BOOT_PATHS = ["/servicios"];
+/** Páginas de destino (anuncios, links de WhatsApp): sin pantalla de carga para que pinten de inmediato. */
+const NO_BOOT_PATHS = ["/servicios", "/clases"];
 const bootScript = `if(!${JSON.stringify(NO_BOOT_PATHS)}.some(function(p){return location.pathname.indexOf(p)===0})){document.documentElement.classList.add('booting');setTimeout(function(){if(document.documentElement.classList.contains('booting')){document.documentElement.classList.remove('booting');document.documentElement.classList.add('boot-fallback')}},4500)}`;
 
 export default function RootLayout({ children }: { children: ReactNode }) {

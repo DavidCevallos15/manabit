@@ -1,0 +1,33 @@
+rules_version = '2';
+
+// Reseñas de las clases de Manabit (/clases).
+// Cualquiera puede enviar una; solo se leen las aprobadas.
+// Para publicar una reseña: consola de Firebase > Firestore > reviews > el documento > approved = true.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /reviews/{reviewId} {
+      allow get: if resource.data.approved == true;
+      allow list: if resource.data.approved == true && request.query.limit <= 100;
+
+      allow create: if request.resource.data.keys().hasOnly(['course', 'name', 'rating', 'comment', 'approved', 'createdAt'])
+        && request.resource.data.keys().hasAll(['course', 'name', 'rating', 'comment', 'approved', 'createdAt'])
+        && request.resource.data.approved == false
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.course is string
+        && request.resource.data.course.size() >= 1 && request.resource.data.course.size() <= 60
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2 && request.resource.data.name.size() <= 60
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1 && request.resource.data.rating <= 5
+        && request.resource.data.comment is string
+        && request.resource.data.comment.size() >= 10 && request.resource.data.comment.size() <= 600;
+
+      // Aprobar, editar o borrar solo desde la consola de Firebase.
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
